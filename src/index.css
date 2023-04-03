@@ -1,0 +1,123 @@
+/* Sector: Apps' Fonts*/
+
+/* English font */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900;1000&display=swap");
+
+/* Arabic font */
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap");
+
+/* Alata font */
+@font-face {
+  font-family: "Alata";
+  src: url("https://fonts.gstatic.com/s/alata/v5/PbytFmztEwbIofe6xKcRQfesZW2xOQ-xsNqO47m55DA.woff2")
+    format("woff2");
+}
+
+/* Sector: Index.css main classes */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* percentage of user's browser font-size settings */
+  font-size: 62.5%;
+}
+
+/* Readex Pro font */
+@font-face {
+  font-family: "Readex Pro";
+  src: url("https://fonts.gstatic.com/s/cairo/v9/SLXHc1jY5nQ8ovjWjw7zPw.ttf")
+    format("truetype");
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  background-color: var(--color-wh);
+  color: var(--color-tx);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  /* Colors: */
+
+  /* Primary color */
+  --color-pr: #1a2330;
+  --color-pr-d1: #17202b;
+  --color-pr-d2: #151c26;
+  --color-pr-d3: #121922;
+  --color-pr-l1: #313945;
+  --color-pr-l2: #484f59;
+  --color-pr-l3: #5f656e;
+
+  /* Secondary color */
+  --color-se: #43b029;
+  --color-se-d1: #3c9e25;
+  --color-se-d2: #368d21;
+  --color-se-d3: #2f7b1d;
+  --color-se-l1: #56b83e;
+  --color-se-l2: #69c054;
+  --color-se-l3: #7bc869;
+
+  /* Tertiary color */
+  --color-te: #f8dba1;
+  --color-te-d1: #dfc591;
+  --color-te-d2: #c6af81;
+  --color-te-d3: #ae9971;
+  --color-te-l1: #f9dfaa;
+  --color-te-l2: #f9e2b4;
+  --color-te-l3: #fae6bd;
+
+  /* Grey color */
+  --color-gr: #f2f2f2;
+  --color-gr-d1: #dadada;
+  --color-gr-d2: #c2c2c2;
+  --color-gr-d3: #a9a9a9;
+  --color-gr-l1: #f3f3f3;
+  --color-gr-l2: #f5f5f5;
+  --color-gr-l3: #f6f6f6;
+
+  /* Text color */
+  --color-tx-pr: #010101;
+  --color-tx-pr-d1: #1a1a1a;
+  --color-tx-pr-l1: #1a1a1a;
+
+  --color-tx-se: #7c7c7c;
+  --color-tx-se-d1: #707070;
+  --color-tx-se-l1: #898989;
+
+  /* Black && White colors */
+  --color-bl: #2c272e;
+  --color-wh: #ffffff;
+
+  /* Shadows: */
+  --shadow-li1: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --shadow-li2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --shadow-dir1: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --shadow-dir2: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --shadow-int1: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --shadow-int2: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* a */
+/* a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.active {
+  border-bottom: 2px solid var(--color-secn);
+} */
