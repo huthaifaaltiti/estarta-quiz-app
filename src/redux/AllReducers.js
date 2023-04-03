@@ -2,11 +2,11 @@
 import { combineReducers } from "redux";
 
 // reducers
-import testReducer from "./Reducers/testReducer/reducer";
+import testsReducer from "./Reducers/testReducer/reducer";
 
 // CombineAllReducers
 const AllReducers = combineReducers({
-  testReducer,
+  testsReducer,
 });
 
 export default AllReducers;
