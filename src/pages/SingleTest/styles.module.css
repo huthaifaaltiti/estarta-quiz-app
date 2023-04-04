@@ -1,0 +1,67 @@
+/* Sector: SingleTest main classes */
+
+.singleTestPage {
+  width: 100%;
+  height: 100%;
+}
+
+.cardsSliderCont {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 1000%; /* set the width of the slider to be 10 times the width of one slide */
+  transition: transform 0.5s ease-in-out;
+}
+
+.sliderItem {
+  flex: 1 0 10%; /* divide the slider equally into 10 parts */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.btnsCont {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.sliderPrev,
+.sliderNext {
+  width: 20%;
+
+  padding: 1rem 3rem;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  color: var(--color-wh);
+  border: none;
+  border-radius: 0.9rem;
+
+  cursor: pointer;
+
+  text-align: center;
+
+  transition: all 0.1s linear;
+}
+.sliderPrev {
+  background-color: var(--color-gr-d1);
+  color: var(--color-tex);
+}
+
+.sliderPrev:hover {
+  background-color: var(--color-gr-d2);
+}
+.sliderNext {
+  background-color: var(--color-pr);
+}
+
+.sliderNext:hover {
+  background-color: var(--color-pr-l1);
+}

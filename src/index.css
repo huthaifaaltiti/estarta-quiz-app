@@ -3,15 +3,6 @@
 /* English font */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900;1000&display=swap");
 
-/* Arabic font */
-@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap");
-
-/* Alata font */
-@font-face {
-  font-family: "Alata";
-  src: url("https://fonts.gstatic.com/s/alata/v5/PbytFmztEwbIofe6xKcRQfesZW2xOQ-xsNqO47m55DA.woff2")
-    format("woff2");
-}
 
 /* Sector: Index.css main classes */
 
@@ -28,20 +19,13 @@ html {
   font-size: 62.5%;
 }
 
-/* Readex Pro font */
-@font-face {
-  font-family: "Readex Pro";
-  src: url("https://fonts.gstatic.com/s/cairo/v9/SLXHc1jY5nQ8ovjWjw7zPw.ttf")
-    format("truetype");
-}
-
 body {
   font-family: 'Nunito', sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
 
   background-color: var(--color-wh);
-  color: var(--color-tx);
+  color: var(--color-tex);
 }
 
 code {
@@ -89,13 +73,13 @@ code {
   --color-gr-l3: #f6f6f6;
 
   /* Text color */
-  --color-tx-pr: #010101;
-  --color-tx-pr-d1: #1a1a1a;
-  --color-tx-pr-l1: #1a1a1a;
+  --color-tex-pr: #010101;
+  --color-tex-pr-d1: #1a1a1a;
+  --color-tex-pr-l1: #1a1a1a;
 
-  --color-tx-se: #7c7c7c;
-  --color-tx-se-d1: #707070;
-  --color-tx-se-l1: #898989;
+  --color-tex-se: #7c7c7c;
+  --color-tex-se-d1: #707070;
+  --color-tex-se-l1: #898989;
 
   /* Black && White colors */
   --color-bl: #2c272e;
@@ -125,4 +109,10 @@ a.active {
 
   background-color: var(--color-pr);
   color:var(--color-wh)
+}
+
+/* Buttons */
+
+button {
+  font-family: 'Nunito', sans-serif;
 }
