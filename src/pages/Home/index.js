@@ -35,8 +35,9 @@ export default function Home() {
   }
 
   useEffect(() => {
-    !tests && dispatch(FetchTests());
-    //  dispatch(FetchTests());
+    if (!tests || tests.length === 0) {
+      dispatch(FetchTests());
+    }
   }, []);
 
   // filter out duplicates by category
