@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/tests" element={<TestsPage />} />
-          <Route path="/test/:category" element={<SingleTest />}/>
+          <Route path="/test/:category" element={<SingleTest  />}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

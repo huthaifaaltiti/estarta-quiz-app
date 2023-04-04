@@ -4,6 +4,7 @@ import * as TESTS_CONSTANTS from "./constants";
 // testsReducer state
 const initialState = {
   tests: [],
+  activeCategory: "",
   loading: false,
   error: null,
 };
@@ -30,13 +31,21 @@ const testsReducer = (state = initialState, action) => {
         error: action.payload,
       };
 
+    case TESTS_CONSTANTS.TESTS_SEND_TEST_CATEGORY:
+      return {
+        ...state,
+        activeCategory: action.payload,
+      };
+
     case TESTS_CONSTANTS.TESTS_SEND_TEST_ANSWER:
-      const { selectedChoice, testId } = action.payload;
+      const { selectedChoice, testId, testCategory } = action.payload;
 
       const updatedState = state.tests.map((test) =>
         test?.id === testId
-          ? selectedChoice === test?.Answer
-            ? { ...test, isAnswered: true, numOfSolvedTask: 1 }
+          ? test?.Category === testCategory
+            ? test?.Answer === selectedChoice
+              ? { ...test, isAnswered: true, numOfSolvedTask: 1 }
+              : test
             : test
           : test
       );
@@ -44,8 +53,8 @@ const testsReducer = (state = initialState, action) => {
       return {
         ...state,
         tests: updatedState,
+        activeCategory: testCategory,
       };
-
     default:
       return state;
   }

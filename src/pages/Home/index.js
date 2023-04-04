@@ -1,12 +1,18 @@
 // react
-import React from "react";
+import React, { useEffect } from "react";
 // react-router-dom
 import { Link } from "react-router-dom";
 // react-redux
 import { useDispatch, useSelector } from "react-redux";
 
+// component
+import TestLoader from "../../components/TestLoader";
+
 // creator functions
-import { FetchTests } from "../../redux/Reducers/testReducer/actions";
+import {
+  FetchTests,
+  SendCategory,
+} from "../../redux/Reducers/testReducer/actions";
 
 // styles, icons
 import styles from "./styles.module.css";
@@ -17,16 +23,46 @@ export default function Home() {
   // npx json-server --watch DataBase/data.json --port 7000
   const dispatch = useDispatch();
   const { tests } = useSelector((state) => state.testsReducer);
+  
 
+  console.log(tests);
   function handleTestQuestions(categorySent) {
-    dispatch(FetchTests(categorySent));
+    dispatch(SendCategory(categorySent));
   }
+
+  useEffect(() => {
+    !tests && dispatch(FetchTests());
+  }, []);
+
+  // filter out duplicates by category
+  const categories = Array.from(new Set(tests.map((test) => test.Category)));
 
   return (
     <div className={styles.homePage}>
       {/* Dashboard loaders containers */}
       <div className={`${styles.dashboard} ${styles.dashboardCont}`}>
-        Dashboard
+        {categories.map((category) => {
+          const categoryTests = tests.filter(
+            (test) => test.Category === category
+          );
+          const categoryNumOfSolvedQuestions = categoryTests.filter(
+            (test) => test.isAnswered === true
+          ).length;
+
+
+          return (
+            <div className={styles.categoryCont}>
+              <h3>{category} Test</h3>
+
+              <div className={styles.loaderCont}>
+                <TestLoader
+                  total={categoryTests.length}
+                  progress={categoryNumOfSolvedQuestions}
+                />
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Buttons dashboard container */}
@@ -54,6 +90,8 @@ export default function Home() {
             <span>Chemistry Test</span>
           </button>
         </Link>
+
+        {/* <button onClick={handleReset}>Reset tests</button> */}
       </div>
     </div>
   );

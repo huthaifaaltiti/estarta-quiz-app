@@ -67,7 +67,7 @@
       "id": 4,
       "Category": "Chemistry",
       "Question": "What is the atomic number of hydrogen?",
-      "Choices": ["1", "2", "2"],
+      "Choices": ["1", "2", "3"],
       "Answer": "1"
     },
     {

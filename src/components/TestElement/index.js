@@ -11,11 +11,9 @@ import styles from "./styles.module.css";
 
 export default function TestElement({ testEl }) {
   const dispatch = useDispatch();
-  const { tests } = useSelector((state) => state.testsReducer);
 
-
-  function handleChoiceClicked(selectedChoice, testId) {
-    dispatch(checkTestAnswer(selectedChoice, testId));
+  function handleChoiceClicked(selectedChoice, testId, testCategory) {
+    dispatch(checkTestAnswer(selectedChoice, testId,testCategory));
   }
 
   return (
@@ -27,7 +25,7 @@ export default function TestElement({ testEl }) {
       <div className={styles.testElementChoices}>
         {testEl?.Choices?.map((choice, index) => (
           <span className={styles.choicesCont} key={index}>
-            <button onClick={() => handleChoiceClicked(choice, testEl?.id)}>
+            <button onClick={() => handleChoiceClicked(choice, testEl?.id, testEl?.Category)}>
               {choice}
             </button>
           </span>

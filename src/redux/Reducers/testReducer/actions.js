@@ -2,7 +2,7 @@
 import * as TESTS_CONSTANTS from "./constants";
 
 // fetching the needed tests depends on category
-export const FetchTests = (categorySent) => async (dispatch) => {
+export const FetchTests = () => async (dispatch) => {
   try {
     dispatch({
       type: TESTS_CONSTANTS.TESTS_FETCH_DATA_REQUEST,
@@ -11,13 +11,9 @@ export const FetchTests = (categorySent) => async (dispatch) => {
     const response = await fetch("http://localhost:7001/Tests");
     const dataTests = await response.json();
 
-    const findMatchedCategories = dataTests.filter(
-      (findCategory) => findCategory.Category === categorySent
-    );
-
     dispatch({
       type: TESTS_CONSTANTS.TESTS_FETCH_DATA_SUCCESS,
-      payload: findMatchedCategories,
+      payload: dataTests,
     });
   } catch (error) {
     dispatch({
@@ -27,9 +23,16 @@ export const FetchTests = (categorySent) => async (dispatch) => {
   }
 };
 
-export const checkTestAnswer = (selectedChoice, testId) => (dispatch) => {
+export const SendCategory = (categorySent) => (dispatch) => {
   dispatch({
-    type: TESTS_CONSTANTS.TESTS_SEND_TEST_ANSWER,
-    payload: {selectedChoice, testId},
+    type: TESTS_CONSTANTS.TESTS_SEND_TEST_CATEGORY,
+    payload: categorySent,
   });
 };
+
+export const checkTestAnswer = (selectedChoice, testId, testCategory) => (dispatch) => {
+    dispatch({
+      type: TESTS_CONSTANTS.TESTS_SEND_TEST_ANSWER,
+      payload: { selectedChoice, testId, testCategory },
+    });
+  };

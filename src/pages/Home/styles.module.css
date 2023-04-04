@@ -10,6 +10,15 @@
   height: 50vh;
 }
 
+.loaderCont {
+  position: relative;
+}
+/* .categoryCont{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+} */
+
 .dashboardBtnsCont {
   width: 100%;
 

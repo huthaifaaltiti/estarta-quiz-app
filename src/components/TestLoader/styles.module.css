@@ -1,0 +1,25 @@
+/* Sector: TestLoader main classes */
+
+.loaderContainer {
+  width: 100%;
+  height: 2rem;
+  background-color: var(--color-gr);
+  border-radius: .2rem;
+}
+
+.loaderProgress {
+  height: 100%;
+  background-color: var(--color-te);
+  border-radius: .2rem;
+  transition: width 0.5s ease-in-out;
+}
+
+.loaderText {
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-tex);
+}
