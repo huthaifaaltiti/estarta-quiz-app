@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 // component
-import TestLoader from "../../components/TestLoader";
+import TestLoader from "../../components/TestLoader/index";
 
 // creator functions
 import {
