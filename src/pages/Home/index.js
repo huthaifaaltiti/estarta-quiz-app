@@ -18,6 +18,7 @@ import {
 import styles from "./styles.module.css";
 import { TbMath } from "react-icons/tb";
 import { SlChemistry } from "react-icons/sl";
+import { BsSpeedometer } from "react-icons/bs";
 
 export default function Home() {
   // npx json-server --watch DataBase/data.json --port 7000
@@ -26,12 +27,16 @@ export default function Home() {
   
 
   console.log(tests);
+
   function handleTestQuestions(categorySent) {
     dispatch(SendCategory(categorySent));
+
+    console.log(categorySent);
   }
 
   useEffect(() => {
     !tests && dispatch(FetchTests());
+    //  dispatch(FetchTests());
   }, []);
 
   // filter out duplicates by category
@@ -88,6 +93,18 @@ export default function Home() {
             <SlChemistry className={styles.testBtnIcon} />
 
             <span>Chemistry Test</span>
+          </button>
+        </Link>
+
+         {/* Physics Btn */}
+         <Link to={"test/Physics"}>
+          <button
+            className={styles.testBtn}
+            onClick={() => handleTestQuestions("Physics")}
+          >
+            <BsSpeedometer className={styles.testBtnIcon} />
+
+            <span>Physics Test</span>
           </button>
         </Link>
 

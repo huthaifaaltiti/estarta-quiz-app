@@ -110,3 +110,9 @@ a.active {
   background-color: var(--color-pr);
   color:var(--color-wh)
 }
+
+/* Buttons */
+
+button {
+  font-family: 'Nunito', sans-serif;
+}

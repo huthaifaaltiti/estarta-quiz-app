@@ -37,6 +37,42 @@
       "Choices": ["11", "12", "0"],
       "Answer": "0"
     },
+    {
+      "id": 6,
+      "Category": "Math",
+      "Question": "100 divided by 2 equals to..",
+      "Choices": ["20", "50", "0"],
+      "Answer": "50"
+    },
+    {
+      "id": 7,
+      "Category": "Math",
+      "Question": "3 plus 3 minus zero equals to..",
+      "Choices": ["1", "6", "3"],
+      "Answer": "6"
+    },
+
+    {
+      "id": 8,
+      "Category": "Math",
+      "Question": "6 plus 6 divided by 1 equals to..",
+      "Choices": ["12", "13", "33"],
+      "Answer": "12"
+    },
+    {
+      "id": 9,
+      "Category": "Math",
+      "Question": "1 minus 1 plus 1 equals to..",
+      "Choices": ["1", "12", "0"],
+      "Answer": "1"
+    },
+    {
+      "id": 10,
+      "Category": "Math",
+      "Question": "100 divided by 100 equals to..",
+      "Choices": ["1", "50", "0"],
+      "Answer": "1"
+    },
 
     {
       "id": 1,
@@ -49,11 +85,7 @@
       "id": 2,
       "Category": "Chemistry",
       "Question": "What is this CH3COOH?",
-      "Choices": [
-        "Hydrochloric Acid",
-        "Ethanoic Acid",
-        "Phosphoric Acid"
-      ],
+      "Choices": ["Hydrochloric Acid", "Ethanoic Acid", "Phosphoric Acid"],
       "Answer": "Ethanoic Acid"
     },
     {
@@ -73,9 +105,118 @@
     {
       "id": 5,
       "Category": "Chemistry",
+      "Question": "What is the chemical symbol for gold?",
+      "Choices": ["CO2", "Ag", "Cu"],
+      "Answer": "Ag"
+    },
+    {
+      "id": 6,
+      "Category": "Chemistry",
+      "Question": "What is the chemical formula for water?",
+      "Choices": ["CO2", "H2O", "NaCl"],
+      "Answer": "H2O"
+    },
+    {
+      "id": 7,
+      "Category": "Chemistry",
+      "Question": "What is the unit for measuring the amount of a substance?",
+      "Choices": ["mol", "mol2", "jol"],
+      "Answer": "mol"
+    },
+    {
+      "id": 8,
+      "Category": "Chemistry",
+      "Question": "What is the process by which a solid changes directly into a gas without going through a liquid phase?",
+      "Choices": ["sublimation", "C", "Ca"],
+      "Answer": "sublimation"
+    },
+    {
+      "id": 9,
+      "Category": "Chemistry",
+      "Question": "Which element has the chemical symbol Fe?",
+      "Choices": ["Iron", "Plastic", "Gold"],
+      "Answer": "Iron"
+    },
+    {
+      "id": 10,
+      "Category": "Chemistry",
       "Question": "What is the formula for water?",
       "Choices": ["CO2", "NaCl", "H2O"],
       "Answer": "H2O"
+    },
+    {
+      "id": 1,
+      "Category": "Physics",
+      "Question": "What is the unit of force?",
+      "Choices": ["meter", "newton", "second"],
+      "Answer": "newton"
+    },
+    {
+      "id": 2,
+      "Category": "Physics",
+      "Question": "What is the acceleration of a freely falling object?",
+      "Choices": ["9.8 m/s^2", "1 m/s", "5 m/s^2"],
+      "Answer": "9.8 m/s^2"
+    },
+    {
+      "id": 3,
+      "Category": "Physics",
+      "Question": "Which law states that for every action, there is an equal and opposite reaction?",
+      "Choices": [
+        "Newton's First Law",
+        "Newton's Second Law",
+        "Newton's Third Law"
+      ],
+      "Answer": "Newton's Third Law"
+    },
+    {
+      "id": 4,
+      "Category": "Physics",
+      "Question": "What is the formula for calculating work?",
+      "Choices": ["W = Fd", "W = mv^2", "W = P/t"],
+      "Answer": "W = Fd"
+    },
+    {
+      "id": 5,
+      "Category": "Physics",
+      "Question": "What is the formula for calculating power?",
+      "Choices": ["P = W/t", "P = Fd", "P = mv^2"],
+      "Answer": "P = W/t"
+    },
+    {
+      "id": 6,
+      "Category": "Physics",
+      "Question": "What is the formula for calculating force?",
+      "Choices": ["F = ma", "F = mv^2", "F = P/t"],
+      "Answer": "F = ma"
+    },
+    {
+      "id": 7,
+      "Category": "Physics",
+      "Question": "What is the SI unit of electric charge?",
+      "Choices": ["Coulomb", "Ohm", "Ampere"],
+      "Answer": "Coulomb"
+    },
+    {
+      "id": 8,
+      "Category": "Physics",
+      "Question": "What is the law that states that the induced electromotive force in a circuit is proportional to the rate of change of magnetic flux through the circuit?",
+      "Choices": ["Faraday's Law", "Ohm's Law", "Coulomb's Law"],
+      "Answer": "Faraday's Law"
+    },
+    {
+      "id": 9,
+      "Category": "Physics",
+      "Question": "What is the process of a solid changing directly into a gas without passing through the liquid phase called?",
+      "Choices": ["Melting", "Freezing", "Sublimation"],
+      "Answer": "Sublimation"
+    },
+    {
+      "id": 10,
+      "Category": "Physics",
+      "Question": "What is the law that states that the pressure of a gas is inversely proportional to its volume at a constant temperature?",
+      "Choices": ["Charles's Law", "Boyle's Law", "Gay-Lussac's Law"],
+      "Answer": "Boyle's Law"
     }
   ]
 }
