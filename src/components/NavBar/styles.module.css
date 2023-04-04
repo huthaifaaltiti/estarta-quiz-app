@@ -33,6 +33,6 @@
 }
 
 .LogoCont span:first-child {
-  background-color: var(--color-pr);
+  background-color: var(--color-pr-l1);
   color: var(--color-wh);
 }
