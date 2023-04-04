@@ -6,7 +6,6 @@ const initialState = {
   tests: [],
   loading: false,
   error: null,
-  activeCategory: {},
 };
 
 // testsReducer
@@ -29,6 +28,22 @@ const testsReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.payload,
+      };
+
+    case TESTS_CONSTANTS.TESTS_SEND_TEST_ANSWER:
+      const { selectedChoice, testId } = action.payload;
+
+      const updatedState = state.tests.map((test) =>
+        test?.id === testId
+          ? selectedChoice === test?.Answer
+            ? { ...test, isAnswered: true, numOfSolvedTask: 1 }
+            : test
+          : test
+      );
+
+      return {
+        ...state,
+        tests: updatedState,
       };
 
     default:

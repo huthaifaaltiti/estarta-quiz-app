@@ -14,13 +14,12 @@ import { TbMath } from "react-icons/tb";
 import { SlChemistry } from "react-icons/sl";
 
 export default function Home() {
+  // npx json-server --watch DataBase/data.json --port 7000
   const dispatch = useDispatch();
   const { tests } = useSelector((state) => state.testsReducer);
 
   function handleTestQuestions(categorySent) {
     dispatch(FetchTests(categorySent));
-
-    // console.log({tests});
   }
 
   return (
@@ -32,7 +31,7 @@ export default function Home() {
 
       {/* Buttons dashboard container */}
       <div className={`${styles.dashboard} ${styles.dashboardBtnsCont}`}>
-      {/* Math Btn */}
+        {/* Math Btn */}
         <Link to={"test/math"}>
           <button
             className={styles.testBtn}
