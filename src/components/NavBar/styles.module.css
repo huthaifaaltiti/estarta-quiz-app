@@ -28,6 +28,7 @@
 }
 
 .LogoCont {
+  font-size: 2.4rem;
   display: flex;
   align-items: center;
 }
@@ -35,4 +36,26 @@
 .LogoCont span:first-child {
   background-color: var(--color-pr);
   color: var(--color-wh);
+}
+
+/* 410px / 16px = 25.625 */
+@media (max-width: 25em) {
+  .navBarBody {
+    font-size: 1.4rem;
+  }
+
+  .LogoCont {
+    font-size: 2.3rem;
+  }
+}
+
+/* 290px / 16px = 18.125 */
+@media (max-width: 18em) {
+  .navBarBody {
+    margin-bottom: 8rem;
+  }
+  .navBarBody nav {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
