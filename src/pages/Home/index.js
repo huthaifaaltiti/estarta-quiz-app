@@ -36,15 +36,12 @@ export default function Home() {
     dispatch(FetchTests());
   }
 
-  // useEffect(() => {
-  //   if (!tests || tests.length === 0) {
-  //     dispatch(FetchTests());
-  //   }
-  // }, []);
-
   useEffect(() => {
-    dispatch(FetchTests());
+    if (!tests || tests?.length === 0) {
+      dispatch(FetchTests());
+    }
   }, []);
+
 
   // filter out duplicates by category
   const categories = Array.from(new Set(tests.map((test) => test.Category)));
