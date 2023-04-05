@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 // react-helmet
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 // component
 import TestLoader from "../../components/TestLoader/index";
@@ -36,10 +36,14 @@ export default function Home() {
     dispatch(FetchTests());
   }
 
+  // useEffect(() => {
+  //   if (!tests || tests.length === 0) {
+  //     dispatch(FetchTests());
+  //   }
+  // }, []);
+
   useEffect(() => {
-    if (!tests || tests.length === 0) {
-      dispatch(FetchTests());
-    }
+    dispatch(FetchTests());
   }, []);
 
   // filter out duplicates by category
