@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 // react-redux
 import { useDispatch, useSelector } from "react-redux";
 
+// react-helmet
+import {Helmet} from "react-helmet";
+
 // component
-import TestLoader from "../../components/TestLoader";
+import TestLoader from "../../components/TestLoader/index";
 
 // creator functions
 import {
@@ -24,14 +27,13 @@ export default function Home() {
   // npx json-server --watch DataBase/data.json --port 7000
   const dispatch = useDispatch();
   const { tests } = useSelector((state) => state.testsReducer);
-  
-
-  console.log(tests);
 
   function handleTestQuestions(categorySent) {
     dispatch(SendCategory(categorySent));
+  }
 
-    console.log(categorySent);
+  function handleReset() {
+    dispatch(FetchTests());
   }
 
   useEffect(() => {
@@ -45,6 +47,12 @@ export default function Home() {
 
   return (
     <div className={styles.homePage}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Quizy Dashboard</title>
+        {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+      </Helmet>
+
       {/* Dashboard loaders containers */}
       <div className={`${styles.dashboard} ${styles.dashboardCont}`}>
         {categories.map((category) => {
@@ -54,7 +62,6 @@ export default function Home() {
           const categoryNumOfSolvedQuestions = categoryTests.filter(
             (test) => test.isAnswered === true
           ).length;
-
 
           return (
             <div className={styles.categoryCont}>
@@ -97,8 +104,8 @@ export default function Home() {
           </button>
         </Link>
 
-         {/* Physics Btn */}
-         <Link to={"test/Physics"}>
+        {/* Physics Btn */}
+        <Link to={"test/Physics"}>
           <button
             className={styles.testBtn}
             onClick={() => handleTestQuestions("Physics")}
@@ -109,7 +116,10 @@ export default function Home() {
           </button>
         </Link>
 
-        {/* <button onClick={handleReset}>Reset tests</button> */}
+        {/* Rest tests container */}
+        <div className={styles.resetBtnCont}>
+          <button onClick={handleReset}>Reset Tests</button>
+        </div>
       </div>
     </div>
   );

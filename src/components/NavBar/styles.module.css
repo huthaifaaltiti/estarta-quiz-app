@@ -4,17 +4,22 @@
   width: 100%;
   height: 3rem;
 
-  padding: 2rem 0;
-  margin-bottom: 3rem;
+ 
+  padding: 4rem 0;
 
   font-size: 1.6rem;
   font-weight: 500;
 
   background-color: var(--color-wh);
   color: var(--color-pr);
+
+  display: flex;
+  align-items: center;
 }
 
 .navBarBody nav {
+  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,11 +33,35 @@
 }
 
 .LogoCont {
+  font-size: 2.4rem;
   display: flex;
   align-items: center;
 }
 
 .LogoCont span:first-child {
-  background-color: var(--color-pr);
+  background-color: var(--color-pr-l1);
   color: var(--color-wh);
+}
+
+/* 410px / 16px = 25.625 */
+@media (max-width: 25em) {
+  .navBarBody {
+    font-size: 1.4rem;
+  }
+
+  .LogoCont {
+    font-size: 2.3rem;
+  }
+}
+
+/* 290px / 16px = 18.125 */
+@media (max-width: 18em) {
+  .navBarBody {
+    margin-bottom: 8rem;
+    padding: 6rem 0;
+  }
+  .navBarBody nav {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
 }

@@ -9,7 +9,7 @@
 
 .loaderProgress {
   height: 100%;
-  background-color: var(--color-te);
+  background-color: var(--color-se);
   border-radius: .2rem;
   transition: width 0.5s ease-in-out;
 }
