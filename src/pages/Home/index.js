@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 // react-redux
 import { useDispatch, useSelector } from "react-redux";
 
+// react-helmet
+import {Helmet} from "react-helmet";
+
 // component
 import TestLoader from "../../components/TestLoader/index";
 
@@ -44,6 +47,12 @@ export default function Home() {
 
   return (
     <div className={styles.homePage}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Quizy Dashboard</title>
+        {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+      </Helmet>
+
       {/* Dashboard loaders containers */}
       <div className={`${styles.dashboard} ${styles.dashboardCont}`}>
         {categories.map((category) => {

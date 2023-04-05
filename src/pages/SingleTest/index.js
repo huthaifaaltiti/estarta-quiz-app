@@ -1,7 +1,11 @@
 // react
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // react-redux
 import { useSelector } from "react-redux";
+
+// react-helmet
+import { Helmet } from "react-helmet";
 
 // components
 import TestElement from "../../components/TestElement";
@@ -12,6 +16,7 @@ import styles from "./styles.module.css";
 export default function SingleTest({ category }) {
   const { tests, activeCategory } = useSelector((state) => state.testsReducer);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const nav = useNavigate();
 
   const handlePrevSlide = () => {
     setCurrentSlide((prev) => {
@@ -27,10 +32,20 @@ export default function SingleTest({ category }) {
       if (prev === 9) return prev;
       return prev + 1;
     });
+
+    if (currentSlide === 9) {
+      nav("/");
+    }
   };
 
   return (
     <div className={styles.singleTestPage}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{`Quizy ${activeCategory} Test`}</title>
+        {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+      </Helmet>
+
       <div className={styles.cardsSliderCont}>
         <div
           className={styles.slider}
