@@ -30,12 +30,13 @@ export default function Home() {
   }
 
   function handleReset() {
-     dispatch(FetchTests());
+    dispatch(FetchTests());
   }
 
   useEffect(() => {
-    !tests && dispatch(FetchTests());
-    
+    if (!tests || tests.length === 0) {
+      dispatch(FetchTests());
+    }
   }, []);
 
   // filter out duplicates by category
