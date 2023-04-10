@@ -54,7 +54,7 @@ export default function SingleTest({ category }) {
             transition: "margin-left 0.5s ease",
           }}
         >
-          {tests?.map((testEl, index) =>
+          {tests.map((testEl, index) =>
             testEl?.Category === activeCategory ? (
               <div className={styles.sliderItem}>
                 <TestElement testEl={testEl} key={index} />

@@ -15,7 +15,7 @@ import TestLoader from "../../components/TestLoader/index";
 import {
   FetchTests,
   SendCategory,
-} from "../../redux/Reducers/testReducer/actions";
+} from "../../redux/Reducers/testReducer/actions.js";
 
 // styles, icons
 import styles from "./styles.module.css";
@@ -28,6 +28,9 @@ export default function Home() {
   const dispatch = useDispatch();
   const { tests } = useSelector((state) => state.testsReducer);
 
+  console.log({tests});
+
+
   function handleTestQuestions(categorySent) {
     dispatch(SendCategory(categorySent));
   }
@@ -37,7 +40,7 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (!tests || tests?.length === 0) {
+    if (!tests || tests.length === 0) {
       dispatch(FetchTests());
     }
   }, []);
@@ -125,3 +128,13 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+// ,
+//   "scripts": {
+//     "start": "react-scripts start",
+//     "build": "react-scripts build",
+//     "test": "react-scripts test",
+//     "eject": "react-scripts eject"
+//   }

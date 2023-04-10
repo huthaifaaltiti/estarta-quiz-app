@@ -1,6 +1,8 @@
 // tests reducer constants
 import * as TESTS_CONSTANTS from "./constants";
 
+// import dataJson from "../../../DataBase/data.json"
+
 // fetching the needed tests depends on category
 export const FetchTests = () => async (dispatch) => {
   try {
@@ -8,8 +10,11 @@ export const FetchTests = () => async (dispatch) => {
       type: TESTS_CONSTANTS.TESTS_FETCH_DATA_REQUEST,
     });
 
-    const response = await fetch("../../../../DataBase/data.json");
+    const response = await fetch("../../../DataBase/data.json");
     const dataTests = await response.json();
+  
+
+    console.log({dataTests});
 
     dispatch({
       type: TESTS_CONSTANTS.TESTS_FETCH_DATA_SUCCESS,
