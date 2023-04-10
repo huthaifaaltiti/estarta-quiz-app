@@ -24,6 +24,12 @@ const testsReducer = (state = initialState, action) => {
         tests: action.payload,
       };
 
+    case TESTS_CONSTANTS.TESTS_RESET_TESTS:
+      return {
+        ...state,
+        tests: [],
+      };
+
     case TESTS_CONSTANTS.TESTS_FETCH_DATA_FAILURE:
       return {
         ...state,
@@ -55,6 +61,7 @@ const testsReducer = (state = initialState, action) => {
         tests: updatedState,
         activeCategory: testCategory,
       };
+
     default:
       return state;
   }

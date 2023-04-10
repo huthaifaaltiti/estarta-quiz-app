@@ -1,8 +1,6 @@
 // tests reducer constants
 import * as TESTS_CONSTANTS from "./constants";
 
-// import dataJson from "../../../DataBase/data.json"
-
 // fetching the needed tests depends on category
 export const FetchTests = () => async (dispatch) => {
   try {
@@ -10,15 +8,14 @@ export const FetchTests = () => async (dispatch) => {
       type: TESTS_CONSTANTS.TESTS_FETCH_DATA_REQUEST,
     });
 
-    const response = await fetch("../../../DataBase/data.json");
+    const response = await fetch("data.json");
     const dataTests = await response.json();
-  
 
-    console.log({dataTests});
+    // console.log( dataTests.Tests );
 
     dispatch({
       type: TESTS_CONSTANTS.TESTS_FETCH_DATA_SUCCESS,
-      payload: dataTests,
+      payload: dataTests.Tests,
     });
   } catch (error) {
     dispatch({
@@ -35,9 +32,16 @@ export const SendCategory = (categorySent) => (dispatch) => {
   });
 };
 
-export const checkTestAnswer = (selectedChoice, testId, testCategory) => (dispatch) => {
+export const checkTestAnswer =
+  (selectedChoice, testId, testCategory) => (dispatch) => {
     dispatch({
       type: TESTS_CONSTANTS.TESTS_SEND_TEST_ANSWER,
       payload: { selectedChoice, testId, testCategory },
     });
   };
+
+export const ResetTests = () => (dispatch) => {
+  dispatch({
+    type: TESTS_CONSTANTS.TESTS_RESET_TESTS,
+  });
+};

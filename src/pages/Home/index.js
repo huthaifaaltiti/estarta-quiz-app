@@ -15,6 +15,7 @@ import TestLoader from "../../components/TestLoader/index";
 import {
   FetchTests,
   SendCategory,
+  ResetTests,
 } from "../../redux/Reducers/testReducer/actions.js";
 
 // styles, icons
@@ -28,9 +29,6 @@ export default function Home() {
   const dispatch = useDispatch();
   const { tests } = useSelector((state) => state.testsReducer);
 
-  console.log({tests});
-
-
   function handleTestQuestions(categorySent) {
     dispatch(SendCategory(categorySent));
   }
@@ -40,11 +38,10 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (!tests || tests.length === 0) {
+    if (!tests || tests?.length === 0) {
       dispatch(FetchTests());
     }
   }, []);
-
 
   // filter out duplicates by category
   const categories = Array.from(new Set(tests.map((test) => test.Category)));
@@ -128,8 +125,6 @@ export default function Home() {
     </div>
   );
 }
-
-
 
 // ,
 //   "scripts": {
