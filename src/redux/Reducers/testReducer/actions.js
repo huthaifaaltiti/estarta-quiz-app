@@ -8,7 +8,7 @@ export const FetchTests = () => async (dispatch) => {
       type: TESTS_CONSTANTS.TESTS_FETCH_DATA_REQUEST,
     });
 
-    const response = await fetch("http://localhost:7001/Tests");
+    const response = await fetch("../../../../DataBase/data.json");
     const dataTests = await response.json();
 
     dispatch({
