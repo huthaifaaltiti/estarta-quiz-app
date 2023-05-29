@@ -11,6 +11,8 @@ import { Helmet } from "react-helmet";
 // component
 import TestLoader from "../../components/TestLoader/index";
 
+import { activateNxtBtn } from "../../redux/Reducers/testReducer/actions.js";
+
 // creator functions
 import {
   FetchTests,
@@ -41,6 +43,8 @@ export default function Home() {
     if (!tests || tests?.length === 0) {
       dispatch(FetchTests());
     }
+
+    dispatch(activateNxtBtn(false));
   }, []);
 
   // filter out duplicates by category

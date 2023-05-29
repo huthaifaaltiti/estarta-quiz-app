@@ -5,6 +5,7 @@ import * as TESTS_CONSTANTS from "./constants";
 const initialState = {
   tests: [],
   activeCategory: "",
+  nextBtnActive: false,
   loading: false,
   error: null,
 };
@@ -62,6 +63,11 @@ const testsReducer = (state = initialState, action) => {
         activeCategory: testCategory,
       };
 
+    case TESTS_CONSTANTS.TESTS_ACTIVATE_NXT_BTN:
+      return {
+        ...state,
+        nextBtnActive: action.payload,
+      };
     default:
       return state;
   }

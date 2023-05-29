@@ -1,8 +1,8 @@
 // react
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // react-redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 // react-helmet
 import { Helmet } from "react-helmet";
@@ -10,11 +10,17 @@ import { Helmet } from "react-helmet";
 // components
 import TestElement from "../../components/TestElement";
 
+import { activateNxtBtn } from "../../redux/Reducers/testReducer/actions";
+
 // styles
 import styles from "./styles.module.css";
 
 export default function SingleTest({ category }) {
-  const { tests, activeCategory } = useSelector((state) => state.testsReducer);
+  const dispatch = useDispatch();
+
+  const { tests, activeCategory, nextBtnActive } = useSelector(
+    (state) => state.testsReducer
+  );
   const [currentSlide, setCurrentSlide] = useState(0);
   const nav = useNavigate();
 
@@ -36,7 +42,11 @@ export default function SingleTest({ category }) {
     if (currentSlide === 9) {
       nav("/");
     }
+
+    dispatch(activateNxtBtn(false));
   };
+
+  console.log({ nextBtnActive });
 
   return (
     <div className={styles.singleTestPage}>
@@ -70,9 +80,23 @@ export default function SingleTest({ category }) {
           <button onClick={handlePrevSlide} class={styles.sliderPrev}>
             Prev
           </button>
-          <button onClick={handleNextSlide} class={styles.sliderNext}>
-            Next
-          </button>
+          {nextBtnActive ? (
+            <button
+              onClick={handleNextSlide}
+              className={styles.sliderNext}
+              style={{ opacity: 1, cursor: "pointer" }}
+            >
+              Next
+            </button>
+          ) : (
+            <button
+              disabled
+              className={styles.sliderNext}
+              style={{ opacity: 0.5, cursor: "not-allowed", backgroundColor:"red" }}
+            >
+              Next
+            </button>
+          )}
         </div>
       </div>
     </div>

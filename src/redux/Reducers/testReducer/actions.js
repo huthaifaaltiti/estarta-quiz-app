@@ -45,3 +45,10 @@ export const ResetTests = () => (dispatch) => {
     type: TESTS_CONSTANTS.TESTS_RESET_TESTS,
   });
 };
+
+export const activateNxtBtn = (value) => (dispatch) => {
+  dispatch({
+    type: TESTS_CONSTANTS.TESTS_ACTIVATE_NXT_BTN,
+    payload: value,
+  });
+};

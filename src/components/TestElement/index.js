@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 // creator functions
 import { checkTestAnswer } from "../../redux/Reducers/testReducer/actions";
 
+import { activateNxtBtn } from "../../redux/Reducers/testReducer/actions";
+
 // styles
 import styles from "./styles.module.css";
 
@@ -14,6 +16,8 @@ export default function TestElement({ testEl }) {
 
   function handleChoiceClicked(selectedChoice, testId, testCategory) {
     dispatch(checkTestAnswer(selectedChoice, testId, testCategory));
+
+    dispatch(activateNxtBtn(true));
   }
 
   return (
