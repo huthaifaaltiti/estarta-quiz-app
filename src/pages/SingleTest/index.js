@@ -46,8 +46,6 @@ export default function SingleTest({ category }) {
     dispatch(activateNxtBtn(false));
   };
 
-  console.log({ nextBtnActive });
-
   return (
     <div className={styles.singleTestPage}>
       <Helmet>

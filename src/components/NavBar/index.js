@@ -18,9 +18,6 @@ export default function NavBar() {
           <NavLink className={styles.navLink} to="/">
             Dashboard
           </NavLink>
-          <NavLink className={styles.navLink} to="/tests">
-            Tests
-          </NavLink>
         </span>
       </nav>
     </div>

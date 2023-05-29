@@ -11,7 +11,6 @@ import "./App.css";
 
 // pages
 const Home = lazy(() => import("./pages/Home/index.js"));
-const TestsPage = lazy(() => import("./pages/TestsPage/index.js"));
 const NotFound = lazy(() => import("./pages/NotFound/index"));
 const SingleTest = lazy(() => import("./pages/SingleTest/index.js"));
 
@@ -22,8 +21,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/tests" element={<TestsPage />} />
-          <Route path="/test/:category" element={<SingleTest  />}/>
+          <Route path="/test/:category" element={<SingleTest />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

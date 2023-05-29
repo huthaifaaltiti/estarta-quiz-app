@@ -1,5 +1,5 @@
 // react
-import React from "react";
+import React, { useState } from "react";
 // react-redux
 import { useDispatch } from "react-redux";
 
@@ -13,11 +13,13 @@ import styles from "./styles.module.css";
 
 export default function TestElement({ testEl }) {
   const dispatch = useDispatch();
+  const [clickedChoice, setClickedChoice] = useState(null);
 
   function handleChoiceClicked(selectedChoice, testId, testCategory) {
     dispatch(checkTestAnswer(selectedChoice, testId, testCategory));
 
     dispatch(activateNxtBtn(true));
+    setClickedChoice(selectedChoice);
   }
 
   return (
@@ -35,6 +37,9 @@ export default function TestElement({ testEl }) {
               onClick={() =>
                 handleChoiceClicked(choice, testEl?.id, testEl?.Category)
               }
+              style={{
+                backgroundColor: clickedChoice === choice ? "green" : "",
+              }}
             >
               {choice}
             </button>
